@@ -1,0 +1,26 @@
+<!-- src/app/item-list/item-list.component.html -->
+<div class="container mt-4">
+    <h2>Item List</h2>
+  
+    <!-- Filter input -->
+    <input 
+      type="text" 
+      class="form-control mb-3" 
+      placeholder="Filter by title" 
+      [(ngModel)]="filterValue" 
+    />
+  
+    <!-- Sort button -->
+    <button class="btn btn-primary mb-3" (click)="toggleSort()">
+      Sort {{ sortAscending ? 'Descending' : 'Ascending' }}
+    </button>
+  
+    <!-- Item list -->
+    <ul class="list-group">
+      <li *ngFor="let item of filteredItems" class="list-group-item">
+        <h5>{{ item.title }}</h5>
+        <p>{{ item.body }}</p>
+      </li>
+    </ul>
+  </div>
+  
